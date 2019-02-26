@@ -30,11 +30,12 @@ input("Press Enter to continue...")
 # TODO: Print the first 20 rows using a loop to identify the data.
 print("\n\nTASK 1: Printing the first 20 samples")
 
-'''
-A loop with range from 0 to 20 to obey the first Task
-'''
-for n in range(0,21):
-    print(data_list[n])
+
+for row in range(0,21):
+    '''
+    A loop with range from 0 to 20 to obey the first Task
+    '''
+    print(data_list[row])
 
 
 # Let's change the data_list to remove the header from it.
@@ -49,14 +50,14 @@ input("Press Enter to continue...")
 
 print("\nTASK 2: Printing the genders of the first 20 samples")
 
-'''
-A loop with range from 0 to 20 to obey the second Task, choosing the 7th element(gender) of each row
 
 
-'''
+for row in range(0,21):
+    '''
+    A loop with range from 0 to 20 to obey the second Task, choosing the 7th element(gender) of each row
 
-for n in range(0,21):
-    print(data_list[n][6])
+    '''
+    print(data_list[row][6])
 
 
 
@@ -68,17 +69,18 @@ input("Press Enter to continue...")
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 
 
-'''
-Function to select the same element of a list of lists.
-Arg:
 
-    a : list of lists
-    b : element that will be taken from the list into a new list
-
-returns 
-     a new list of parameter b.
-'''
 def column_to_list(data, index):
+    '''
+    Function to select the same element of a list of lists.
+    Arg:
+
+        a : list of lists
+        b : element that will be taken from the list into a new list
+
+    returns
+         a new list of parameter b.
+    '''
     column_list = []
 
     for row in data:
@@ -126,17 +128,17 @@ input("Press Enter to continue...")
 # TODO: Create a function to count the genders. Return a list
 # Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
 
-'''
-Function to count each sex.
-Arg:
-
-    a : list which contains the sexes
-
-returns 
-     a list that the first item is the sum of males and the second item is the sum of females
-'''
 
 def count_gender(data_list):
+    '''
+    Function to count each sex.
+    Arg:
+
+        a : list which contains the sexes
+
+    returns
+         a list that the first item is the sum of males and the second item is the sum of females
+    '''
     male = 0
     female = 0
 
@@ -165,16 +167,17 @@ input("Press Enter to continue...")
 # We expect to see "Male", "Female" or "Equal" as answer.
 
 
-'''
-Function to determine which sex is more popular.
-Arg:
 
-    a : list which contains the sexes
-
-returns 
-     it will print the answer of which sex has appeared more in  the data_list
-'''
 def most_popular_gender(data_list):
+    '''
+    Function to determine which sex is more popular.
+    Arg:
+
+        a : list which contains the sexes
+
+    returns
+         it will print the answer of which sex has appeared more in  the data_list
+    '''
     answer = ""
 
     gender = count_gender(data_list)
@@ -213,16 +216,17 @@ input("Press Enter to continue...")
 # TODO: Plot a similar graph for user_types. Make sure the legend is correct.
 print("\nTASK 7: Check the chart!")
 
-'''
-Function to count each type of user
-Arg:
 
-    a : list which contains the sexes
-
-returns 
-     a list that the first value is the user type Subscribed and the second type is Customer
-'''
 def count_user_type(data_list):
+    '''
+    Function to count each type of user
+    Arg:
+
+        a : list which contains the sexes
+
+    returns
+         a list that the first value is the user type Subscribed and the second type is Customer
+    '''
     subscriber = 0
     customer = 0
 
@@ -267,37 +271,39 @@ input("Press Enter to continue...")
 trip_duration_list = column_to_list(data_list, 2)
 trip_duration_list = list(map(int, trip_duration_list))
 
-'''
-Function to find the average trip duration.
-Arg:
 
-    a : list which contains all trip duration
-
-returns 
-    returns the average of the trips in the argument A.
-'''
 def mean__trip(data):
+    '''
+    Function to find the average trip duration.
+    Arg:
+
+        a : list which contains all trip duration
+
+    returns
+        returns the average of the trips in the argument A.
+    '''
     return sum(data)/len(data)
 
-'''
-Function to find the median of trip duration
-Arg:
 
-    a : list which contains all trip duration
-
-returns 
-     returns the median of the trips in the argument A
-'''
 def median__trip(data):
+    '''
+    Function to find the median of trip duration
+    Arg:
+
+        a : list which contains all trip duration
+
+    returns
+         returns the median of the trips in the argument A
+    '''
     sorted(data)
 
-    n = len(data)
-    if n < 1:
+    data_length = len(data)
+    if data_length < 1:
         return None
-    if n % 2 == 1:
-        return sorted(data)[n // 2]
+    if data_length % 2 == 1:
+        return sorted(data)[data_length // 2]
     else:
-        return sum(sorted(data)[n // 2 - 1:n // 2 + 1]) / 2.0
+        return sum(sorted(data)[data_length // 2 - 1:data_length // 2 + 1]) / 2.0
 
 min_trip = 600
 max_trip = 0.
@@ -358,11 +364,26 @@ input("Press Enter to continue...")
 # TODO: Create a function to count user types without hardcoding the types
 # so we can use this function with a different kind of data.
 print("Will you face it?")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
-    item_types = []
-    count_items = []
+    '''
+    Function that counts how many valid and different items there are in a list
+    :param column_list:
+    :return:
+        diferent item types, how many items there are in total
+    '''
+
+    all_items = []
+    for column in column_list:
+        if column != '':
+            all_items.append(column)
+
+    item_types = set(all_items)
+    count_items = len(all_items)
+
+    print('item_types', item_types)
+    print('count', count_items)
     return item_types, count_items
 
 
@@ -372,6 +393,7 @@ if answer == "yes":
     types, counts = count_items(column_list)
     print("\nTASK 11: Printing results for count_items()")
     print("Types:", types, "Counts:", counts)
+    print(types)
     assert len(types) == 3, "TASK 11: There are 3 types of gender!"
     assert sum(counts) == 1551505, "TASK 11: Returning wrong result!"
     # -----------------------------------------------------
