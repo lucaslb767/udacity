@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2995057e-4603-4009-9166-9bb8996ba56c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/aiBegin/ML/boston_housing/boston_housing_PT.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/aiBegin/ML/boston_housing/boston_housing_PT.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="2995057e-4603-4009-9166-9bb8996ba56c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,12 +163,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551137587693</updated>
-      <workItem from="1551137588940" duration="3628000" />
+      <workItem from="1551137588940" duration="3648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3628000" />
+    <option name="totallyTimeSpent" value="3648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="140" y="43" width="1400" height="919" extended-state="0" />
@@ -186,7 +184,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32889965" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32889965" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
