@@ -44,9 +44,6 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-#part A
-
-
 def get_prefixes(calls):
     bangalore_calls = {}
     for call in calls:
@@ -78,4 +75,20 @@ def answer_A(bangalore_calls):
     for key,value in sorted(bangalore_calls.items()):
         print(key)
 
-answer_A(get_prefixes(calls))
+def answer_B(bangalore_calls):
+    total = 0
+    bangalore = 0
+
+    for key, value in bangalore_calls.items():
+        total += value
+
+        if key == '080':
+            bangalore += value
+
+    return f"{((bangalore/total)*100):.2f}% percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
+
+
+bangalore_calls = get_prefixes(calls)
+
+answer_A(bangalore_calls)
+print(answer_B(bangalore_calls))
