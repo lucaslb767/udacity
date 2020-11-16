@@ -31,3 +31,8 @@ different_numbers(texts, unique_numbers)
 different_numbers(calls,unique_numbers)
 
 print(f'There are {len(unique_numbers)} different telephone numbers in the records.')
+
+'''
+Inside the first loop, it will loop in another array twice. Making it 2n².
+O(n²) at worst case
+'''

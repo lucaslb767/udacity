@@ -40,3 +40,12 @@ def get_longest_call(longest_calls):
 
     return f'{longest_number} spent the longest time, {longest_call} seconds, on the phone during September 2016.'
 print(get_longest_call(longest_calls))
+
+'''
+The program starts looping throught calls, and for each loop, checks if the call[0] and call[1] are inside 
+the dictionary longest_calls. That would make 2n² at worst.
+
+Then it will loops again inside the longest_calls dictionary, making it O(n).
+
+The program would have 2n² + n = O(n²) at worst case
+'''

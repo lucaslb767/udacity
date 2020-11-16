@@ -45,3 +45,7 @@ print("These numbers could be telemarketers: ")
 for possible_telemarketer in sorted(possible_telemarketers):
     print(possible_telemarketer)
 
+'''We have 4 unested loops, meaning that the program will iteration each loop, n times at worst.
+    so 4n = O(n)
+'''
+

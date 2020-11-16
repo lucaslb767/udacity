@@ -63,7 +63,6 @@ def get_prefixes(calls):
 
             else:
                 telemarketing = called_number
-                print(telemarketing)
                 if telemarketing not in bangalore_calls:
                     bangalore_calls[telemarketing] = 0
                 bangalore_calls[telemarketing] += 1
@@ -92,3 +91,12 @@ bangalore_calls = get_prefixes(calls)
 
 answer_A(bangalore_calls)
 print(answer_B(bangalore_calls))
+
+'''The function of get_prefixes loops all the calls, inside each iteration will loop inside all of the bangalore_call 
+dictionary at worst. So it would be O(n*n) at worst
+
+Both functions answer_A and answer_B will loop throught the dictionary bangalore_call once, making both O(n) at worst
+
+The function would be then n*n + 2n = O(n²) at worst
+
+'''
