@@ -20,3 +20,23 @@ Print a message:
 September 2016.".
 """
 
+longest_calls = {}
+
+for call in calls:
+    if call[0] not in longest_calls:
+        longest_calls[call[0]] = 0
+    if call[1] not in longest_calls:
+        longest_calls[call[1]] = 0
+    longest_calls[call[0]] += int(call[3])
+    longest_calls[call[1]] += int(call[3])
+
+def get_longest_call(longest_calls):
+    longest_number = ''
+    longest_call = 0
+    for key,value in longest_calls.items():
+        if value > longest_call:
+            longest_call = value
+            longest_number = key
+
+    return f'{longest_number} spent the longest time, {longest_call} seconds, on the phone during September 2016.'
+print(get_longest_call(longest_calls))
