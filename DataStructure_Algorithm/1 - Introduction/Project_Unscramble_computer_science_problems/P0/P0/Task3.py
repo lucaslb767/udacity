@@ -43,3 +43,39 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+#part A
+
+
+def get_prefixes(calls):
+    bangalore_calls = {}
+    for call in calls:
+        if call[0][0:5] == '(080)':
+            called_number = call[1]
+            if called_number[0:2] == '(0':
+                area_code = called_number[called_number.find("(")+1 : called_number.find(")")]
+                if area_code not in bangalore_calls:
+                    bangalore_calls[area_code] = 0
+                bangalore_calls[area_code] += 1
+
+            elif called_number[0] in ['7','8','9']:
+                cellphone_prefix = called_number.split(' ')[0]
+                if cellphone_prefix not in bangalore_calls:
+                    bangalore_calls[cellphone_prefix] = 0
+                bangalore_calls[cellphone_prefix] += 1
+
+            else:
+                telemarketing = called_number
+                print(telemarketing)
+                if telemarketing not in bangalore_calls:
+                    bangalore_calls[telemarketing] = 0
+                bangalore_calls[telemarketing] += 1
+    return bangalore_calls
+
+
+def answer_A(bangalore_calls):
+    print('The numbers called by people in Bangalore have codes')
+    for key,value in sorted(bangalore_calls.items()):
+        print(key)
+
+answer_A(get_prefixes(calls))
