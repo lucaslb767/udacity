@@ -28,14 +28,11 @@ possible_telemarketers = set()
 not_telemarketers = set()
 
 for text in texts:
-    if text[0] not in not_telemarketers:
-        not_telemarketers.add(text[0])
-    if text[1] not in not_telemarketers:
-        not_telemarketers.add(text[1])
+    not_telemarketers.add(text[0])
+    not_telemarketers.add(text[1])
 
 for call in calls:
-    if call[1] not in not_telemarketers:
-        not_telemarketers.add(call[1])
+    not_telemarketers.add(call[1])
 
 for call in calls:
     if call[0] not in not_telemarketers:

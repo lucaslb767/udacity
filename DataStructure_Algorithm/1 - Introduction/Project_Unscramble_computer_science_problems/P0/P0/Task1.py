@@ -22,10 +22,8 @@ unique_numbers = set()
 
 def different_numbers(calls, unique_numbers):
     for call in calls:
-        if call[0] not in unique_numbers:
-            unique_numbers.add(call[0])
-        if call[1] not in unique_numbers:
-            unique_numbers.add(call[1])
+        unique_numbers.add(call[0])
+        unique_numbers.add(call[1])
 
 different_numbers(texts, unique_numbers)
 different_numbers(calls,unique_numbers)
@@ -33,6 +31,5 @@ different_numbers(calls,unique_numbers)
 print(f'There are {len(unique_numbers)} different telephone numbers in the records.')
 
 '''
-Inside the first loop, it will loop in another array twice. Making it 2n².
-O(n²) at worst case
+Inside the first loop, it will loop in another array twice. Making it 2n². O(n²) at worst case
 '''

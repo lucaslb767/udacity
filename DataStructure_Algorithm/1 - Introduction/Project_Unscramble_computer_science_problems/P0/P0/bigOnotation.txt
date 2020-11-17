@@ -1,0 +1,21 @@
+task 0 - It doesn't loop through the dataset, receiving the results directly. So it is O(1) at worst case
+
+task 1 - Inside the first loop, it will loop in another array twice. Making it 2n². O(n²) at worst case
+
+task 2 - The program starts looping throught calls, and for each loop, checks if the call[0] and call[1] are
+         inside the dictionary longest_calls. That would make 2n² at worst.
+
+         Then it will loops again inside the longest_calls dictionary, making it O(n).
+
+         The program would have 2n² + n = O(n²) at worst case
+
+task 3 - The function of get_prefixes loops all the calls, inside each iteration will loop inside all of
+         the bangalore_call dictionary at worst. So it would be O(n²) at worst
+
+         Both functions answer_A and answer_B will loop throught the dictionary bangalore_call once,
+         making both O(n) at worst
+
+         The function would be then n*n + 2n = O(n²) at worst
+
+task 4 - We have 4 unested loops, meaning that the program will iteration each loop, n times at worst.
+         so 4n = O(n)

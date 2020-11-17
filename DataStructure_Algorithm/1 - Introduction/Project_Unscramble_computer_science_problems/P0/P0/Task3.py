@@ -49,6 +49,7 @@ def get_prefixes(calls):
     for call in calls:
         if call[0][0:5] == '(080)':
             called_number = call[1]
+
             if called_number[0:2] == '(0':
                 area_code = called_number[called_number.find("(")+1 : called_number.find(")")]
                 if area_code not in bangalore_calls:
@@ -56,13 +57,14 @@ def get_prefixes(calls):
                 bangalore_calls[area_code] += 1
 
             elif called_number[0] in ['7','8','9']:
-                cellphone_prefix = called_number.split(' ')[0]
+                cellphone_prefix = called_number[:4]
                 if cellphone_prefix not in bangalore_calls:
                     bangalore_calls[cellphone_prefix] = 0
                 bangalore_calls[cellphone_prefix] += 1
 
-            else:
-                telemarketing = called_number
+            #last time I treated this as else, however my reviewer said I was wrong. The result is the same, but i am adressing the 140 number directly
+            elif called_number[0:3] == '140':
+                telemarketing = called_number[0:3]
                 if telemarketing not in bangalore_calls:
                     bangalore_calls[telemarketing] = 0
                 bangalore_calls[telemarketing] += 1
